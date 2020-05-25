@@ -1,12 +1,16 @@
 <?php
-    include('../connectdb/connectdb.php'); //incluindo conexão ao bd
+    include('connectdb/connectdb.php'); //incluindo conexão ao bd
 
-    $stmt = $conn->prepare("SELECT * FROM vereador ORDER BY nome"); //query para puxar vereadores
+    $acao = isset($_GET['acao'])? $_GET['acao']:'';
 
-    $stmt->execute(); //executando a query
+    if(!$acao){
+        $stmt = $conn->prepare("SELECT * FROM vereador ORDER BY nome"); //query para puxar vereadores
 
-    $candidatos = $stmt->fetchall(PDO::FETCH_ASSOC); //
+        $stmt->execute(); //executando a query
 
-    exit (json_encode($candidatos));
+        $candidatos = $stmt->fetchall(PDO::FETCH_ASSOC); 
+    }
+    
+    
     
 ?>

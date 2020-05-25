@@ -10226,4 +10226,8 @@ a.text-dark:hover, a.text-dark:focus {
     color:red;
     text-align: center;
   }
+.margens{
+  margin-left: 20%;
+  margin-right: 20%;
+}
 /*# sourceMappingURL=bootstrap.css.map */
