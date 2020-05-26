@@ -7,7 +7,7 @@ CREATE TABLE vereador (id int not null auto_increment primary key,
                         
 CREATE TABLE usuario (id int not null auto_increment primary key,
 			nome varchar(50),
-                        cpf int);
+                        cpf varchar(14));
                         
 CREATE TABLE votos (id_voto int not null auto_increment primary key,
 		    id_vereador int,
