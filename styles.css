@@ -47,3 +47,22 @@ margin: 0 auto!important;
 .txt-center{
     text-align: center!important;
 }
+
+.txt-center{
+    text-align: center;
+}
+
+.mt-top-bt-20{
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+.align-button{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+.align-button > button{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
