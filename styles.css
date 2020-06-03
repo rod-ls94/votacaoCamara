@@ -63,6 +63,10 @@ margin: 0 auto!important;
     text-align: center;
 }
 .align-button > button{
-        margin-left: 10px;
-        margin-right: 10px;
-    }
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.grafico{
+    font-size: 14px;
+}

@@ -92,5 +92,14 @@
             return "Erro ao inserir voto";
         }
     }
+
+    function pesquisaVotos($conn){
+        $stmtVotos = $conn->prepare("SELECT ver.nome FROM votos vt INNER JOIN vereador ver ON ver.id = vt.id_vereador ORDER BY id_usuario");
+        $stmtVotos->execute();
+
+        $array = $stmtVotos->fetchall(PDO::FETCH_ASSOC);
+
+        return $array;
+    }
     
 ?>

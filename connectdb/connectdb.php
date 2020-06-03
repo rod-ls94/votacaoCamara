@@ -1,5 +1,5 @@
 <?php
-    $conn = new PDO("mysql:dbname=pesquisa2020;host=localhost:3307","root","");
+    $conn = new PDO("mysql:dbname=pesquisa2020;host=localhost","root","criasoft123");
 
     if($conn){
         echo "<script>console.log('conexão bem sucedida')</script>";
