@@ -19,7 +19,7 @@
 
         if($nome && $validaCpf && $checks) {
             $returnUser = insertuser($nome, $cpf, $checks, $conn); //INSERINDO DADOS DO USUARIO E RETORNANDO SEU ID
-            
+
             if(is_array($returnUser)) {
                 $returnVoto = insertVoto($returnUser, $checks, $conn); //INSERINDO VOTO E CONFIRMANDO SE FOI REALIZADO O VOTO
                 if($returnVoto === true){
@@ -61,8 +61,8 @@
         <meta charset="utf-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <link rel="stylesheet" type="text/css" href="libs/bootstrap-4.4.1-dist/css/bootstrap.css">
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
-        <script src="js/bootstrap.js"></script>
+        <link href="libs/bootstrap-4.4.1-dist/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="libs/bootstrap-4.4.1-dist/js/bootstrap.js"></script>
         <link rel="stylesheet" type="text/css" href="styles.css">
         <script src="js/config.js"></script>
         <script src="libs/Highcharts-8.1.0/code/highcharts.js"></script>
@@ -158,7 +158,7 @@
                 <?php 
                     foreach ($candidatos as $can){ //INICIO FOREACH
                         $idCandidato      = $can['id'];
-                        $nomeCandidato    = $can['nome'];
+                        $nomeCandidato    = utf8_encode($can['nome']);
                         $partidoCandidato = $can['partido'];
                 ?>
                 <div class="card">
@@ -184,7 +184,6 @@
 
         <!-- INSERINDO AS INFORMAÇÕES DO GRÁFICO EM CAMPO HIDDEN PARA BUSCAR PELO JS -->
         <input type="hidden" id="result" value="<?php echo $result ?>">
-            
         </script>
         <!-- GERANDO GRÁFICO -->
         <script>
